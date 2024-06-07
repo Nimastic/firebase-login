@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Firebase Auth -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAoaNA7pam9LO87XcF0Ye0P03Qsd6ZT-Ac",
+        authDomain: "login-with-firebase-data-d0d10.firebaseapp.com",
+        projectId: "login-with-firebase-data-d0d10",
+        storageBucket: "login-with-firebase-data-d0d10.appspot.com",
+        messagingSenderId: "754436313384",
+        appId: "1:754436313384:web:3c39fcbce151793bbbc01d"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Logout function
+      function logout() {
+          firebase.auth().signOut().then(() => {
+              alert('Logout Successful');
+              window.location.href = "index.html"; // Redirect to login page
+          }).catch((error) => {
+              alert('Error: ' + error.message);
+          });
+      }
+    </script>
+</head>
+<body>
+    <div id="content_container">
+        <h2>Welcome to the Homepage</h2>
+        <button onclick="logout()">Logout</button>
+    </div>
+</body>
+</html>
